@@ -73,7 +73,7 @@ Participante → sorteio → Formulário A, B ou C
 ## 📁 Estrutura do Repositório
 
 ```
-📦 ihc-estudo/
+📦 Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/
 ├── 📄 README.md
 ├── 📄 interface_a.html     # Interface A — Sensor + Probabilidades
 ├── 📄 interface_b.html     # Interface B — Descrição textual
