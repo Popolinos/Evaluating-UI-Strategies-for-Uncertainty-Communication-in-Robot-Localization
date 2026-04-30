@@ -76,12 +76,7 @@
   }
   .log-line.visible { opacity: 1; transform: translateY(0); }
   .log-line.faded   { opacity: 0.25; }
-  .log-time {
-    font-size: clamp(9px, 1.1vw, 11px);
-    color: #ff4444;
-    white-space: nowrap;
-    letter-spacing: 1px;
-  }
+
   .log-text {
     font-size: clamp(13px, 1.8vw, 18px);
     color: #e8e8e8;
@@ -187,11 +182,6 @@ const scenarios = [
 
 let typeInterval = null;
 
-function randomTimestamp() {
-  const n = Math.floor(Math.random() * 90) + 10;
-  return 'T-' + n;
-}
-
 function typewrite(text, el, speed=32) {
   if (typeInterval) clearInterval(typeInterval);
   el.innerHTML = '<span class="cursor">▋</span>';
@@ -215,14 +205,9 @@ function render(s, idx) {
   const line = document.createElement('div');
   line.className = 'log-line';
 
-  const time = document.createElement('span');
-  time.className = 'log-time';
-  time.textContent = randomTimestamp();
-
   const text = document.createElement('span');
   text.className = 'log-text latest';
 
-  line.appendChild(time);
   line.appendChild(text);
   box.appendChild(line);
 
