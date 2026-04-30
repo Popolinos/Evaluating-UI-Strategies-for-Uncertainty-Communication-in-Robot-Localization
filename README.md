@@ -1,4 +1,4 @@
-# 🤖 Comunicação de Incerteza em Localização de Robôs Móveis
+# Evaluating UI Strategies for Uncertainty Communication in Robot Localization
 
 > Estudo de IHC — Mestrado  
 > Avaliação de estratégias de interface para comunicar incerteza em sistemas de localização robótica
@@ -32,11 +32,11 @@ O experimento adota um design **between-subjects**: cada participante avalia **u
 ### Interface A — Visão do Sensor + Probabilidades
 Apresenta a leitura do sensor LiDAR do robô junto com a probabilidade associada a cada hipótese de mapa. Abordagem **quantitativa**.
 
-### Interface B — Descrição do Ambiente *(em breve)*
-Apresenta uma descrição textual dos arredores percebidos pelo robô. Abordagem **descritiva**.
+### Interface B — Descrição do Ambiente
+Apresenta uma descrição textual dos arredores percebidos pelo robô, com efeito de digitação simulando transmissão em tempo real. Abordagem **descritiva**.
 
-### Interface C — Histórico de Movimento *(em breve)*
-Apresenta o histórico recente de movimentos do robô como contexto temporal. Abordagem **temporal**.
+### Interface C — Histórico de Movimento
+Apresenta o estado atual de movimento do robô com timestamp decorativo, simulando um log de sistema. Abordagem **temporal**.
 
 ---
 
@@ -68,6 +68,16 @@ Participante → sorteio → Formulário A, B ou C
 - **Variável independente:** Tipo de interface (A, B ou C)
 - **Variáveis dependentes:** Compreensão, confiança e tomada de decisão do operador
 
+### Ordem dos cenários por formulário
+
+Para evitar viés de aprendizado entre participantes que eventualmente acessem mais de um formulário, os cenários são apresentados em ordens distintas:
+
+| Formulário | Ordem de apresentação |
+|---|---|
+| Interface A | Cenário 1 → 2 → 3 → 4 → 5 |
+| Interface B | Cenário 3 → 1 → 5 → 2 → 4 |
+| Interface C | Cenário 4 → 2 → 1 → 5 → 3 |
+
 ---
 
 ## 📁 Estrutura do Repositório
@@ -75,30 +85,28 @@ Participante → sorteio → Formulário A, B ou C
 ```
 📦 Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/
 ├── 📄 README.md
-├── 📄 interface_a.html     # Interface A — Sensor + Probabilidades
-├── 📄 interface_b.html     # Interface B — Descrição textual
+├── 📄 interface_a.html     # Interface A — Sensor LiDAR + Probabilidades
+├── 📄 interface_b.html     # Interface B — Descrição textual do ambiente
 └── 📄 interface_c.html     # Interface C — Histórico de movimento
 ```
 
 ---
 
-## 🔗 Links dos Formulários
-
-> *(Serão adicionados após publicação no GitHub Pages)*
+## 🔗 Links
 
 | Interface | Link |
 |-----------|------|
-| Interface A | `—` |
-| Interface B | `—` |
-| Interface C | `—` |
+| Interface A | [interface_a](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/interface_a.html) |
+| Interface B | [interface_b](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/interface_b.html) |
+| Interface C | [interface_c](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/interface_c.html) |
 
 ---
 
 ## 🛠️ Tecnologias
 
 - HTML5 + CSS3 + JavaScript puro
+- Layout responsivo com `clamp()` — funciona em desktop, tablet e mobile
 - Imagens embarcadas em Base64 (sem dependências externas)
-- Layout responsivo (desktop e mobile)
 - Hospedado via **GitHub Pages**
 
 ---
