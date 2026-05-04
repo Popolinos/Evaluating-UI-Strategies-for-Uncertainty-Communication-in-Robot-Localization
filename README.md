@@ -36,21 +36,7 @@ Apresenta a leitura do sensor LiDAR do robô junto com a probabilidade associada
 Apresenta uma descrição textual dos arredores percebidos pelo robô, com efeito de digitação simulando transmissão em tempo real. Abordagem **descritiva**.
 
 ### Interface C — Histórico de Movimento
-Apresenta o estado atual de movimento do robô com timestamp decorativo, simulando um log de sistema. Abordagem **temporal**.
-
----
-
-## 📍 Cenários
-
-Cada interface é aplicada aos mesmos 5 cenários, com complexidade e ambiguidade crescentes:
-
-| Cenário | Situação |
-|---------|----------|
-| **1** | Corredor simples antes de uma curva |
-| **2** | Corredor com duas direções possíveis |
-| **3** | Corredor após curva, sem bifurcação |
-| **4** | Corredor após curva com bifurcação à frente |
-| **5** | Conflito de hipótese — robô em posição ambígua |
+Apresenta o estado atual de movimento do robô, simulando um log de sistema. Abordagem **temporal**.
 
 ---
 
@@ -61,7 +47,7 @@ Participante → sorteio → Formulário A, B ou C
                               ↓
                      5 cenários sequenciais
                               ↓
-                   4–5 perguntas por cenário
+                   5–6 perguntas por cenário
 ```
 
 - **Tipo:** Between-subjects
