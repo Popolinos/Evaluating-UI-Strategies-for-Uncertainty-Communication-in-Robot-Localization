@@ -61,7 +61,7 @@ Participante → triagem automática → Formulário A, B ou C
                                           ↓
                                  5 cenários sequenciais
                                           ↓
-                               4–5 perguntas por cenário
+                               5–6 perguntas por cenário
 ```
 
 - **Tipo:** Between-subjects
