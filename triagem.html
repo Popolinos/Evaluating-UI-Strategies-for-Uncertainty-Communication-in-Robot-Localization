@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesquisa — Interfaces de Sistemas Robóticos</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: monospace;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    padding: clamp(28px, 5vw, 48px);
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+  }
+  .dot-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #ff4444;
+    animation: blink 1.2s infinite;
+  }
+  .dot:nth-child(2) { animation-delay: 0.4s; }
+  .dot:nth-child(3) { animation-delay: 0.8s; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.15} }
+
+  .label {
+    font-size: 10px;
+    color: #666;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: clamp(18px, 3vw, 24px);
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  p {
+    font-size: clamp(13px, 1.8vw, 15px);
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+  .btn {
+    background: #ff4444;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 14px 36px;
+    font-size: clamp(13px, 1.8vw, 15px);
+    font-family: monospace;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background 0.2s, transform 0.1s;
+    width: 100%;
+    max-width: 280px;
+  }
+  .btn:hover { background: #cc2222; }
+  .btn:active { transform: scale(0.97); }
+
+  .redirecting {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .redirecting.visible { display: flex; }
+  .spinner {
+    width: 36px; height: 36px;
+    border: 3px solid #2a2a2a;
+    border-top-color: #ff4444;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .redir-text {
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 1px;
+  }
+  .initial { transition: opacity 0.3s; }
+  .initial.hidden { opacity: 0; pointer-events: none; }
+
+  .footer {
+    margin-top: 28px;
+    font-size: 11px;
+    color: #444;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="dot-wrap">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <div class="initial" id="initial">
+    <div class="label">pesquisa acadêmica — IHC</div>
+    <h1>Interfaces de Sistemas Robóticos</h1>
+    <p>
+      Esta pesquisa investiga como pessoas interpretam informações de sistemas robóticos.<br><br>
+      A participação leva aproximadamente <strong style="color:#ccc">10 minutos</strong> e é totalmente anônima.
+    </p>
+    <button class="btn" onclick="start()">Participar</button>
+  </div>
+
+  <div class="redirecting" id="redirecting">
+    <div class="spinner"></div>
+    <div class="redir-text">Preparando sua sessão...</div>
+  </div>
+
+  <div class="footer">
+    Pesquisa de Mestrado — Programa de Pós-Graduação em IHC<br>
+    Participação voluntária e anônima
+  </div>
+</div>
+
+<script>
+const forms = [
+  'https://forms.gle/E5855EWnbYJfcdpe9',
+  'https://forms.gle/J2qASjJJ2cPio7wv7',
+  'https://forms.gle/eyHJABmXkLxZRR566'
+];
+
+// Balanced distribution using localStorage counter
+function getNextForm() {
+  const key = 'ihc_counter';
+  const count = parseInt(localStorage.getItem(key) || '0');
+  const idx = count % 3;
+  localStorage.setItem(key, count + 1);
+  return forms[idx];
+}
+
+function start() {
+  document.getElementById('initial').classList.add('hidden');
+  document.getElementById('redirecting').classList.add('visible');
+  const url = getNextForm();
+  setTimeout(() => { window.location.href = url; }, 1200);
+}
+</script>
+</body>
+</html>
