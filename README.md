@@ -42,12 +42,12 @@ Apresenta o estado atual de movimento do robô simulando um log de sistema. Abor
 
 ## 📍 Cenários
 
-Cada interface é aplicada aos mesmos 5 cenários, com complexidade e ambiguidade crescentes:
+Cada interface é aplicada aos mesmos 5 cenários, com complexidade crescente:
 
 | Cenário | Complexidade |
-|---------|----------|
+|---------|-------------|
 | **1** | Baixa |
-| **2** | Médias |
+| **2** | Média |
 | **3** | Média |
 | **4** | Alta |
 | **5** | Alta |
@@ -61,12 +61,16 @@ Participante → triagem automática → Formulário A, B ou C
                                           ↓
                                  5 cenários sequenciais
                                           ↓
-                               5–6 perguntas por cenário
+                               4–5 perguntas por cenário
 ```
 
 - **Tipo:** Between-subjects
 - **Variável independente:** Tipo de interface (A, B ou C)
 - **Variáveis dependentes:** Compreensão, confiança e tomada de decisão do operador
+
+### Distribuição dos participantes
+
+A página de triagem distribui os participantes automaticamente utilizando um contador centralizado via Google Apps Script. O sistema sempre direciona o novo participante para o grupo com menor número de respostas, garantindo distribuição equilibrada entre os três formulários ao longo da coleta.
 
 ---
 
@@ -87,7 +91,7 @@ Participante → triagem automática → Formulário A, B ou C
 
 | Página | Link |
 |--------|------|
-| Triagem | [triagem](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/triagem.html) |
+| **Triagem** (divulgue este) | [triagem](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/triagem.html) |
 | Interface A | [interface_a](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/interface_a.html) |
 | Interface B | [interface_b](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/interface_b.html) |
 | Interface C | [interface_c](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/interface_c.html) |
@@ -99,6 +103,7 @@ Participante → triagem automática → Formulário A, B ou C
 - HTML5 + CSS3 + JavaScript puro
 - Layout responsivo com `clamp()` — funciona em desktop, tablet e mobile
 - Imagens embarcadas em Base64 (sem dependências externas)
+- Distribuição balanceada via **Google Apps Script**
 - Hospedado via **GitHub Pages**
 
 ---

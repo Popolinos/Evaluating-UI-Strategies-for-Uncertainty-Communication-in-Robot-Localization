@@ -139,22 +139,30 @@
 </div>
 
 <script>
-const forms = [
-  'https://forms.gle/E5855EWnbYJfcdpe9',
-  'https://forms.gle/J2qASjJJ2cPio7wv7',
-  'https://forms.gle/eyHJABmXkLxZRR566'
-];
+const forms = {
+  'A': 'https://forms.gle/E5855EWnbYJfcdpe9',
+  'B': 'https://forms.gle/J2qASjJJ2cPio7wv7',
+  'C': 'https://forms.gle/eyHJABmXkLxZRR566'
+};
 
-function getNextForm() {
-  const idx = Math.floor(Math.random() * 3);
-  return forms[idx];
-}
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyi8VAGXc5WgcE6iLp_c4ufq7o-pH9UaQi5sv1nxfrOg3QEQ0kTURpRumXbA6wp2esD9g/exec';
 
 function start() {
   document.getElementById('initial').classList.add('hidden');
   document.getElementById('redirecting').classList.add('visible');
-  const url = getNextForm();
-  setTimeout(() => { window.location.href = url; }, 1200);
+
+  fetch(SCRIPT_URL)
+    .then(res => res.json())
+    .then(data => {
+      const url = forms[data.form];
+      setTimeout(() => { window.location.href = url; }, 800);
+    })
+    .catch(() => {
+      // fallback to random if script fails
+      const keys = Object.keys(forms);
+      const url = forms[keys[Math.floor(Math.random() * keys.length)]];
+      setTimeout(() => { window.location.href = url; }, 800);
+    });
 }
 </script>
 </body>
