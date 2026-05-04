@@ -68,18 +68,6 @@ Participante → sorteio → Formulário A, B ou C
 - **Variável independente:** Tipo de interface (A, B ou C)
 - **Variáveis dependentes:** Compreensão, confiança e tomada de decisão do operador
 
-### Ordem dos cenários por formulário
-
-Para evitar viés de aprendizado entre participantes que eventualmente acessem mais de um formulário, os cenários são apresentados em ordens distintas:
-
-| Formulário | Ordem de apresentação |
-|---|---|
-| Interface A | Cenário 1 → 2 → 3 → 4 → 5 |
-| Interface B | Cenário 3 → 1 → 5 → 2 → 4 |
-| Interface C | Cenário 4 → 2 → 1 → 5 → 3 |
-
----
-
 ## 📁 Estrutura do Repositório
 
 ```
