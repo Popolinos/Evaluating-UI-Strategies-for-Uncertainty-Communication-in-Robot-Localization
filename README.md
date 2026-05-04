@@ -87,7 +87,7 @@ Participante → triagem automática → Formulário A, B ou C
 
 | Página | Link |
 |--------|------|
-| **Triagem** (divulgue este) | [triagem](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/triagem.html) |
+| Triagem | [triagem](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/triagem.html) |
 | Interface A | [interface_a](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/interface_a.html) |
 | Interface B | [interface_b](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/interface_b.html) |
 | Interface C | [interface_c](https://popolinos.github.io/Evaluating-UI-Strategies-for-Uncertainty-Communication-in-Robot-Localization/interface_c.html) |
