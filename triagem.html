@@ -145,12 +145,8 @@ const forms = [
   'https://forms.gle/eyHJABmXkLxZRR566'
 ];
 
-// Balanced distribution using localStorage counter
 function getNextForm() {
-  const key = 'ihc_counter';
-  const count = parseInt(localStorage.getItem(key) || '0');
-  const idx = count % 3;
-  localStorage.setItem(key, count + 1);
+  const idx = Math.floor(Math.random() * 3);
   return forms[idx];
 }
 
